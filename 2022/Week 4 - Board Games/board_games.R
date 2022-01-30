@@ -47,7 +47,7 @@ full_games %>%
         theme_fira()+
         scale_x_continuous(breaks = seq(1950,2021,5), expand = c(0,0))+
         scale_y_continuous(breaks = seq(3,25,2), expand = c(0,0))+
-        labs(y = "Minimum Recomended Age",
+        labs(y = "Minimum Recommended Age",
              fill = "Average",
              x = "Year",
              title = "Average Rating for Board Games by Minimum Age",
@@ -66,7 +66,7 @@ full_games %>%
         theme(legend.key.size = unit(1.1, 'cm'))+
         annotate("text", x = 1996, y = 23, family = "roboto", size = 3.7, color = "white",
                  label = "Yes, there is a game with
-        25 years minimun age")+
+        25 years old minimun age")+
         geom_curve(
                 data = arrows, aes(x = x1, y = y1,xend = x2, yend = y2),
                 arrow = arrow(length = unit(0.07, "inch")), size = 0.9,
@@ -75,7 +75,7 @@ full_games %>%
 
         
 ggsave("bord_games.png", plot = last_plot(),
-       width =1232, height = 860,units = "px", dpi = 72)
+       width =900, height = 900,units = "px", dpi = 72)
 
 
 

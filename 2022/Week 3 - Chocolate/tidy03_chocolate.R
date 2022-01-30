@@ -4,6 +4,10 @@ library(hrbrthemes)
 library(showtext)
 library(firatheme)
 library(ggthemes)
+library(camcorder)
+
+gg_record(dir = "temp", device = "png", width = 13, height = 10, units = "in", dpi = 320)
+
 
 
 showtext_auto()

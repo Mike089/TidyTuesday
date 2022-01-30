@@ -64,7 +64,7 @@ full_games %>%
               plot.caption = element_text(color = "white", family = "roboto", size = 11),
               legend.position = "bottom")+
         theme(legend.key.size = unit(1.1, 'cm'))+
-        annotate("text", x = 1997, y = 23, family = "roboto", size = 3.2, color = "white",
+        annotate("text", x = 1996, y = 23, family = "roboto", size = 3.7, color = "white",
                  label = "Yes, there is a game with
         25 years minimun age")+
         geom_curve(

@@ -3,7 +3,9 @@ library(viridis)
 library(firatheme)
 library(hrbrthemes)
 library(showtext)
-library(ggplot2)
+library(camcorder)
+
+gg_record(dir = "temp", device = "png", width = 10, height = 10, units = "in", dpi = 320)
 
 showtext_auto()
 
@@ -49,7 +51,8 @@ full_games %>%
              fill = "Average",
              x = "Year",
              title = "Average Rating for Board Games by Minimum Age",
-             subtitle = "For each year since 1980 to 2020")+
+             subtitle = "For each year since 1980 to 2020",
+             caption = "Source: BoardGamesGeek | Chart: Miguel HG (@mike_dvz)")+
         theme(plot.background = element_rect(fill = "#282828", color = NA),
               axis.text = element_text(color = "white", family = "montserrat", size = 11),
               legend.text = element_text(color = "white", family = "montserrat",face = "bold"),
@@ -58,6 +61,7 @@ full_games %>%
               axis.title.x = element_text(color = "white", family = "montserrat", size = 13, face = "bold"),
               plot.title = element_text(color = "white", family = "roboto", size = 24, face = "bold"),
               plot.subtitle = element_text(color = "white", family = "roboto", size = 17),
+              plot.caption = element_text(color = "white", family = "roboto", size = 11),
               legend.position = "bottom")+
         theme(legend.key.size = unit(1.1, 'cm'))+
         annotate("text", x = 1997, y = 23, family = "roboto", size = 3.2, color = "white",

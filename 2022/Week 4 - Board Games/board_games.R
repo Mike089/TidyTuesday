@@ -38,7 +38,7 @@ arrows <- tibble(x1 = c(2000),
                  y2 = c(25))
 
 
-full_games %>% 
+c <- full_games %>% 
         group_by(minage) %>%
         ggplot(aes(x = yearpublished, y = minage, fill = average))+
         geom_tile(color = "white", size = 0.5)+
@@ -52,7 +52,7 @@ full_games %>%
              x = "Year",
              title = "Average Rating for Board Games by Minimum Age",
              subtitle = "For each year since 1980 to 2020",
-             caption = "Source: BoardGamesGeek | Chart: Miguel HG (@mike_dvz)")+
+             caption = "Source: BoardGameGeek | Chart: Miguel HG (@mike_dvz)")+
         theme(plot.background = element_rect(fill = "#282828", color = NA),
               axis.text = element_text(color = "white", family = "montserrat", size = 11),
               legend.text = element_text(color = "white", family = "montserrat",face = "bold"),
@@ -73,9 +73,11 @@ full_games %>%
                 color = "white", curvature = -0.2,
                 inherit.aes = FALSE)
 
+c
+
         
 ggsave("bord_games.png", plot = last_plot(),
-       width =900, height = 900,units = "px", dpi = 72)
+       width =1080/72, height = 1080/72, dpi = 72)
 
 
 
